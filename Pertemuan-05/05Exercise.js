@@ -83,29 +83,20 @@ const addingTwoArrays = (first, second) => first.length === second.length ?
 console.log(addingTwoArrays(firstArray, secondArray)) // [4, 4, 4]
 
 // 5. add element in the end of array
-const pushUnique = (array) => {
-  let uniqueArray = []
-
-  for (let i = 0; i < array.length; i++) {
-    if (!includes(uniqueArray, array[i])) {
-      uniqueArray.push(array[i])
-    }
+const pushUnique = (value, array) => {
+  if (!array.includes(value)) {
+    array.push(value)
   }
-
-  function includes(arr, el) {
-    for (let i = 0; i < arr.length; i++) {
-      if (arr[i] == el) {
-        return true
-      }
-    }
-    return false
-  }
-
-  return uniqueArray
 }
 
-let u = pushUnique([2, 3, 4, 5, 1, 2, 3, 5])
-console.log(u) // [2, 3, 4, 5, 1]
+let uniq = []
+pushUnique(2, uniq)
+pushUnique(3, uniq)
+pushUnique(3, uniq)
+pushUnique(4, uniq)
+pushUnique(4, uniq)
+pushUnique(5, uniq)
+console.log(uniq) // [2, 3, 4, 5]
 
 
 // 6. removes all odd numbers in an array 
