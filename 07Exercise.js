@@ -19,7 +19,7 @@ const intersection = (obj1, obj2) => {
   return res
 }
 
-console.log(intersection({ a: 1, b: 3, c: 5 }, { a: 1, c: 5, d: 2 })) // {a: 1, c: 3}
+console.log(intersection({ a: 1, b: 3, c: 5 }, { a: 1, c: 5, d: 2 })) // {a: 1, c: 5}
 console.log(intersection({ a: 1, b: 3 }, { a: 1, c: 3 })) // {a: 1}
 
 // 3. join and remove duplicate data
@@ -36,8 +36,6 @@ const joinAndRemove = (arr1, arr2) => {
       result.push(item)
     }
   })
-
-
   return result
 }
 
@@ -57,7 +55,6 @@ const switchValToKey = (arr) => {
   let res = {}
   arr.forEach(obj => {
     for (let key in obj) {
-      console.log(key)
       res = { ...res, [obj[key]]: key }
     }
   })
