@@ -15,7 +15,7 @@ class Queue {
     return this.queue
   }
 
-  processQueue() {
+  processQueueRecursive() {
     if (this.queue.length === 0) {
       return
     }
@@ -31,6 +31,23 @@ class Queue {
         resolve()
       }, randomInterval)
     })
+
+  }
+
+  async processQueue() {
+    while (this.queue.length > 0) {
+      const order = this.dequeue()
+      const randomInterval = Math.floor(Math.random() * 10 + 1) * 1000
+
+      console.log(`Processing Order: ${order}. Waiting for ${randomInterval / 1000} seconds ...`)
+      await new Promise((resolve) => {
+        setTimeout(() => {
+          console.log(`Order ${order} processed.`)
+          this.processQueue();
+          resolve()
+        }, randomInterval)
+      })
+    }
   }
 }
 
