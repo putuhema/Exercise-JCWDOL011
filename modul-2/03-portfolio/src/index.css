@@ -1,0 +1,376 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-snap-type: y mandatory;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: "Roboto", sans-serif;
+}
+
+section {
+  height: 100vh;
+  scroll-snap-align: start;
+  position: relative;
+}
+
+.container {
+  padding: 2rem 8rem;
+}
+
+.page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin-right: 10rem;
+}
+
+.page p {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+.page span {
+  display: block;
+  background-color: #fff;
+  height: 100px;
+  width: 4px;
+}
+
+.page h2 {
+  writing-mode: vertical-lr;
+  text-orientation: sideways-right;
+}
+
+.hero {
+  background-color: #000;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  position: relative;
+  overflow: hidden;
+  color: #fff;
+  padding: 2rem 8rem;
+}
+
+.hero .animation {
+  color: #fff;
+  white-space: nowrap;
+  overflow: hidden;
+  border-right: 4px solid #fff;
+  animation: typewriter 4s steps(15) 1s infinite both,
+    blinkCursor 500ms steps(15) infinite;
+}
+
+.hero h1 {
+  font-size: 6rem;
+  max-width: 600px;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+
+  to {
+    width: 170px;
+  }
+}
+
+@keyframes blinkCursor {
+  from {
+    border-right-color: #fff;
+  }
+
+  to {
+    border-right-color: transparent;
+  }
+}
+
+.skill {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  padding: 2rem 8rem;
+}
+
+.skill h3 {
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.skill p {
+  max-width: 800px;
+}
+
+.skill_container {
+  width: 100%;
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.skill_content {
+  display: grid;
+  width: 800px;
+  grid-template-columns: repeat(3, 1fr);
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+.progress {
+  border-radius: 50%;
+  transform: translate(50%, 50%);
+  width: 100px;
+  height: 100px;
+  display: flex;
+  margin: 20px;
+  background-color: #ddd;
+  position: relative;
+}
+
+.progress .overlay {
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  margin: auto;
+  background-color: #fff;
+  display: grid;
+  place-content: center;
+}
+
+.progress-0 {
+  background-image: -webkit-linear-gradient(left, #ddd 50%, transparent 50%),
+    -webkit-linear-gradient(left, #000 50%, #ddd 50%);
+  background-image: linear-gradient(90deg, #ddd 50%, transparent 50%),
+    linear-gradient(90deg, #000 50%, #ddd 50%);
+}
+
+.progress-10 {
+  background-image: -webkit-linear-gradient(36deg, #ddd 50%, transparent 50%),
+    -webkit-linear-gradient(left, #000 50%, #ddd 50%);
+  background-image: linear-gradient(54deg, #ddd 50%, transparent 50%),
+    linear-gradient(90deg, #000 50%, #ddd 50%);
+}
+
+.progress-20 {
+  background-image: -webkit-linear-gradient(72deg, #ddd 50%, transparent 50%),
+    -webkit-linear-gradient(left, #000 50%, #ddd 50%);
+  background-image: linear-gradient(18deg, #ddd 50%, transparent 50%),
+    linear-gradient(90deg, #000 50%, #ddd 50%);
+}
+
+.progress-30 {
+  background-image: -webkit-linear-gradient(108deg, #ddd 50%, transparent 50%),
+    -webkit-linear-gradient(left, #000 50%, #ddd 50%);
+  background-image: linear-gradient(-18deg, #ddd 50%, transparent 50%),
+    linear-gradient(90deg, #000 50%, #ddd 50%);
+}
+
+.progress-40 {
+  background-image: -webkit-linear-gradient(144deg, #ddd 50%, transparent 50%),
+    -webkit-linear-gradient(left, #000 50%, #ddd 50%);
+  background-image: linear-gradient(-54deg, #ddd 50%, transparent 50%),
+    linear-gradient(90deg, #000 50%, #ddd 50%);
+}
+
+.progress-50 {
+  background-image: -webkit-linear-gradient(right, #ddd 50%, transparent 50%),
+    -webkit-linear-gradient(left, #000 50%, #ddd 50%);
+  background-image: linear-gradient(-90deg, #ddd 50%, transparent 50%),
+    linear-gradient(90deg, #000 50%, #ddd 50%);
+}
+
+.progress-60 {
+  background-image: -webkit-linear-gradient(left, #000 50%, transparent 50%),
+    -webkit-linear-gradient(36deg, #000 50%, #ddd 50%);
+  background-image: linear-gradient(90deg, #000 50%, transparent 50%),
+    linear-gradient(54deg, #000 50%, #ddd 50%);
+}
+
+.progress-70 {
+  background-image: -webkit-linear-gradient(left, #000 50%, transparent 50%),
+    -webkit-linear-gradient(72deg, #000 50%, #ddd 50%);
+  background-image: linear-gradient(90deg, #000 50%, transparent 50%),
+    linear-gradient(18deg, #000 50%, #ddd 50%);
+}
+
+.progress-80 {
+  background-image: -webkit-linear-gradient(left, #000 50%, transparent 50%),
+    -webkit-linear-gradient(108deg, #000 50%, #ddd 50%);
+  background-image: linear-gradient(90deg, #000 50%, transparent 50%),
+    linear-gradient(-18deg, #000 50%, #ddd 50%);
+}
+
+.progress-90 {
+  background-image: -webkit-linear-gradient(left, #000 50%, transparent 50%),
+    -webkit-linear-gradient(144deg, #000 50%, #ddd 50%);
+  background-image: linear-gradient(90deg, #000 50%, transparent 50%),
+    linear-gradient(-54deg, #000 50%, #ddd 50%);
+}
+
+.progress-100 {
+  background-image: -webkit-linear-gradient(left, #000 50%, transparent 50%),
+    -webkit-linear-gradient(right, #000 50%, #ddd 50%);
+  background-image: linear-gradient(90deg, #000 50%, transparent 50%),
+    linear-gradient(-90deg, #000 50%, #ddd 50%);
+}
+
+.contact {
+  display: flex;
+}
+
+.contact .forms {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.contact h3,
+p {
+  text-align: center;
+}
+
+.contact h3 {
+  font-size: 3.5rem;
+}
+
+.contact form {
+  margin-top: 4rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+.contact input {
+  width: 800px;
+  padding: 1rem;
+}
+
+.contact textarea {
+  font-family: "Roboto", sans-serif;
+  font-size: 1rem;
+  padding: 1rem;
+  height: 8rem;
+}
+
+.contact button {
+  padding: 1rem 4rem;
+  background-color: black;
+  color: #fff;
+  width: max-content;
+  border-radius: 4rem;
+  border: 1px solid black;
+}
+
+/* utilities */
+span.bg-black {
+  background-color: #000;
+}
+
+.footer {
+  background-color: black;
+  padding: 2rem 8rem;
+}
+
+.footer a {
+  width: max-content;
+  gap: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-decoration: none;
+  color: #fff;
+}
+
+.footer .line {
+  margin-top: 5rem;
+  width: 100%;
+  height: 2px;
+  display: block;
+  background-color: #fff;
+}
+
+.footer ion-icon {
+  color: white;
+  font-size: 1.5rem;
+}
+
+ion-icon {
+  font-size: 3rem;
+}
+
+@media (max-width: 786px) {
+  .page {
+    display: none;
+    flex-direction: row;
+    place-self: flex-start;
+  }
+
+  .page p {
+    font-size: 2rem;
+  }
+
+  .page h2 {
+    writing-mode: unset;
+    text-orientation: unset;
+  }
+
+  .page span {
+    display: none;
+  }
+
+  .hero {
+    flex-direction: column;
+    justify-content: center;
+    padding: 2rem 4rem;
+  }
+
+  .hero h1 {
+    font-size: 4rem;
+  }
+
+  .skill {
+    padding: 2rem 4rem;
+    flex-direction: column;
+  }
+
+  .skill_container,
+  .skill_content,
+  .skill p {
+    width: 100%;
+  }
+
+  .skill_content {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .skill_container,
+  .skill_content {
+    justify-content: start;
+  }
+
+  .contact {
+    padding: 2rem 4rem;
+    flex-direction: column;
+  }
+
+  .contact input {
+    width: 100%;
+  }
+
+  .contact h3 {
+    font-size: 2rem;
+  }
+
+  .footer {
+    padding: 2rem 4rem;
+  }
+}
