@@ -6,6 +6,7 @@ import { Products } from "../../type";
 import { useAppDispatch } from "../../hooks/useRedux";
 import {
   changeQty,
+  controlCheckedCart,
   decrementQty,
   deleteCart,
   incrementQty,
@@ -15,6 +16,7 @@ type Props = {
   item: {
     products: Products;
     quantity: number;
+    isChecked: boolean;
   };
 };
 
@@ -48,7 +50,9 @@ const Card = ({ item }: Props) => {
           className="w-5 h-5 bg-white rounded-md text-pink-500 ring-0 focus:ring-0"
           type="checkbox"
           name="store"
-          id="stohow to stop input in reactre"
+          id="store"
+          onChange={() => dispatch(controlCheckedCart(item.products.id))}
+          checked={item.isChecked}
         />
         <span className="flex flex-col gap-2">
           <h3 className="uppercase m-0 font-bold text-xl leading-4">
@@ -63,6 +67,8 @@ const Card = ({ item }: Props) => {
           type="checkbox"
           name="store-item"
           id="store-item"
+          onChange={() => dispatch(controlCheckedCart(item.products.id))}
+          checked={item.isChecked}
         />
         <div className="flex gap-2">
           <img
@@ -128,7 +134,10 @@ const Card = ({ item }: Props) => {
           <span className="flex gap-2 items-center justify-between">
             <span
               onClick={() =>
-                quantity > 0 && dispatch(decrementQty(item.products.id))
+                quantity > 0 &&
+                dispatch(
+                  decrementQty({ id: item.products.id, qty: item.quantity })
+                )
               }
               className={`cursor-pointer rounded-full p-1 border-2 ${
                 quantity === 0 ? "border-gray-300" : "border-pink-500"

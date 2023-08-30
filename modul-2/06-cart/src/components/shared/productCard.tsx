@@ -2,6 +2,7 @@ import { Store, Trash } from "lucide-react";
 import { useAppDispatch } from "../../hooks/useRedux";
 import { addProductCart } from "../../redux/slice/cartSlice";
 import { Products } from "../../type";
+import { productPicked } from "../../redux/slice/productSlice";
 
 type Props = {
   product: Products;
@@ -35,7 +36,10 @@ const ProductCard = ({ product }: Props) => {
           <Trash strokeWidth={1} />
         </button>
         <button
-          onClick={() => dispatch(addProductCart(product))}
+          onClick={() => {
+            dispatch(addProductCart(product));
+            dispatch(productPicked(product.id));
+          }}
           className="flex-1 flex gap-2 items-center text-center border rounded-md p-2 justify-center border-pink-500 text-pink-500"
         >
           <span>+Keranjang</span>

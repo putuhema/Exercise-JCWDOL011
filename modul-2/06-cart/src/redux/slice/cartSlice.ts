@@ -5,6 +5,7 @@ interface Cart {
   items: {
     products: Products;
     quantity: number;
+    isChecked: boolean;
   }[];
   totalPrice: number;
   totalDiscount: number;
@@ -21,17 +22,22 @@ const initialState: Cart = {
 const calculatePrice = (state: Cart) => {
   const calculateTotalPrice = () =>
     state.items.reduce(
-      (acc, curr) => acc + Number(curr.products.product.price) * curr.quantity,
+      (acc, curr) =>
+        acc +
+        (curr.isChecked
+          ? Number(curr.products.product.price) * curr.quantity
+          : 0),
       0
     );
   const calculateDiscount = () =>
     state.items
-      .map(
-        (item) =>
-          Math.floor(
-            (+item.products.product.discount / 100) *
-              +item.products.product.price
-          ) * item.quantity
+      .map((item) =>
+        item.isChecked
+          ? Math.floor(
+              (+item.products.product.discount / 100) *
+                +item.products.product.price
+            ) * item.quantity
+          : 0
       )
       .reduce((acc, curr) => acc + curr, 0);
 
@@ -48,22 +54,27 @@ export const cartSlice = createSlice({
       state.items.push({
         products: action.payload,
         quantity: 1,
+        isChecked: true,
       });
+
       calculatePrice(state);
     },
     incrementQty: (state, action) => {
-      state.items.map((state) =>
-        state.products.id === action.payload
-          ? { ...state, quantity: (state.quantity += 1) }
-          : state
+      state.items.map((item) =>
+        item.products.id === action.payload
+          ? { ...item, quantity: (item.quantity += 1) }
+          : item
       );
       calculatePrice(state);
     },
     decrementQty: (state, action) => {
-      state.items.map((state) =>
-        state.products.id === action.payload
-          ? { ...state, quantity: (state.quantity -= 1) }
-          : state
+      state.items.map((item) =>
+        item.products.id === action.payload.id
+          ? {
+              ...item,
+              quantity: (item.quantity -= 1),
+            }
+          : item
       );
       calculatePrice(state);
     },
@@ -74,10 +85,18 @@ export const cartSlice = createSlice({
       calculatePrice(state);
     },
     changeQty: (state, action) => {
-      state.items.map((state) =>
-        state.products.id === action.payload.id
-          ? { ...state, quantity: action.payload.qty }
-          : state
+      state.items = state.items.map((item) =>
+        item.products.id === action.payload.id
+          ? { ...item, quantity: action.payload.qty }
+          : item
+      );
+      calculatePrice(state);
+    },
+    controlCheckedCart: (state, action) => {
+      state.items = state.items.map((item) =>
+        item.products.id === action.payload
+          ? { ...item, isChecked: !item.isChecked }
+          : item
       );
       calculatePrice(state);
     },
@@ -95,6 +114,7 @@ export const {
   incrementQty,
   decrementQty,
   changeQty,
+  controlCheckedCart,
   deleteCart,
   clearCart,
 } = cartSlice.actions;

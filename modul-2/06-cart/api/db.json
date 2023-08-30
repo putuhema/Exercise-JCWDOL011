@@ -152,6 +152,50 @@
       "totalDiscount": 4747500,
       "totalPrice": 18990000,
       "endTotal": 14242500
+    },
+    {
+      "id": 0.3274338586717318,
+      "items": [
+        {
+          "products": {
+            "id": "tkp-p1",
+            "store": {
+              "name": "samsung",
+              "location": "Seoul"
+            },
+            "product": {
+              "imgUrl": "/product/product2.jpg",
+              "title": "UltraHD Smart TV",
+              "color": "Silver",
+              "discount": "15",
+              "price": "8990000"
+            }
+          },
+          "quantity": 1,
+          "isChecked": false
+        },
+        {
+          "products": {
+            "id": "tkp-p4",
+            "store": {
+              "name": "adidas",
+              "location": "Herzogenaurach"
+            },
+            "product": {
+              "imgUrl": "/product/product10.jpg",
+              "title": "Ultraboost Running Shoes",
+              "color": "Blue",
+              "discount": "20",
+              "price": "1299000"
+            }
+          },
+          "quantity": 1,
+          "isChecked": false
+        }
+      ],
+      "totalDiscount": 0,
+      "totalPrice": 0,
+      "endTotal": 0
     }
   ]
 }

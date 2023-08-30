@@ -16,21 +16,23 @@ const Cart = () => {
   const [isCheck, setIsCheck] = useState(false);
 
   const handleSubmitCart = async () => {
-    const res = await fetch(" http://localhost:3000/cart", {
-      headers: {
-        "Content-Type": "application/json",
-      },
-      method: "POST",
-      body: JSON.stringify({
-        id: Math.random(),
-        items,
-        totalDiscount,
-        totalPrice,
-        endTotal,
-      }),
-    });
-    if (res.status === 201) {
-      dispatch(clearCart());
+    if (endTotal > 0) {
+      const res = await fetch(" http://localhost:3000/cart", {
+        headers: {
+          "Content-Type": "application/json",
+        },
+        method: "POST",
+        body: JSON.stringify({
+          id: Math.random(),
+          items,
+          totalDiscount,
+          totalPrice,
+          endTotal,
+        }),
+      });
+      if (res.status === 201) {
+        dispatch(clearCart());
+      }
     }
   };
   return (
