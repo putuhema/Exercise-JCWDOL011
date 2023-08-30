@@ -1,0 +1,157 @@
+{
+  "products": [
+    {
+      "id": "tkp-p1",
+      "store": {
+        "name": "samsung",
+        "location": "Seoul"
+      },
+      "product": {
+        "imgUrl": "/product/product2.jpg",
+        "title": "UltraHD Smart TV",
+        "color": "Silver",
+        "discount": "15",
+        "price": "8990000"
+      }
+    },
+    {
+      "id": "tkp-p6",
+      "store": {
+        "name": "sony",
+        "location": "Tokyo"
+      },
+      "product": {
+        "imgUrl": "/product/product4.jpg",
+        "title": "Noise-Canceling Headphones",
+        "color": "Black",
+        "discount": "40",
+        "price": "349000"
+      }
+    },
+    {
+      "id": "tkp-p2",
+      "store": {
+        "name": "hp",
+        "location": "Houston"
+      },
+      "product": {
+        "imgUrl": "/product/product5.jpg",
+        "title": "Gaming Laptop 15T",
+        "color": "Green",
+        "discount": "25",
+        "price": "18990000"
+      }
+    },
+    {
+      "id": "tkp-p3",
+      "store": {
+        "name": "microsoft",
+        "location": "Redmond"
+      },
+      "product": {
+        "imgUrl": "/product/product8.jpg",
+        "title": "Xbox Series X",
+        "color": "Black",
+        "discount": "10",
+        "price": "4990000"
+      }
+    },
+    {
+      "id": "tkp-p4",
+      "store": {
+        "name": "adidas",
+        "location": "Herzogenaurach"
+      },
+      "product": {
+        "imgUrl": "/product/product10.jpg",
+        "title": "Ultraboost Running Shoes",
+        "color": "Blue",
+        "discount": "20",
+        "price": "1299000"
+      }
+    },
+    {
+      "id": "tkp-p5",
+      "store": {
+        "name": "google",
+        "location": "Mountain View"
+      },
+      "product": {
+        "imgUrl": "/product/product11.jpg",
+        "title": "Pixel 6 Smartphone",
+        "color": "White",
+        "discount": "15",
+        "price": "7990000"
+      }
+    }
+  ],
+  "cart": [
+    {
+      "id": 0.9569108867704621,
+      "items": [
+        {
+          "products": {
+            "id": "tkp-p3",
+            "store": {
+              "name": "microsoft",
+              "location": "Redmond"
+            },
+            "product": {
+              "imgUrl": "/product/product8.jpg",
+              "title": "Xbox Series X",
+              "color": "Black",
+              "discount": "10",
+              "price": "4990000"
+            }
+          },
+          "quantity": 3
+        },
+        {
+          "products": {
+            "id": "tkp-p1",
+            "store": {
+              "name": "samsung",
+              "location": "Seoul"
+            },
+            "product": {
+              "imgUrl": "/product/product2.jpg",
+              "title": "UltraHD Smart TV",
+              "color": "Silver",
+              "discount": "15",
+              "price": "8990000"
+            }
+          },
+          "quantity": 1
+        }
+      ],
+      "totalDiscount": 2845500,
+      "totalPrice": 23960000,
+      "endTotal": 21114500
+    },
+    {
+      "id": 0.24843090320075656,
+      "items": [
+        {
+          "products": {
+            "id": "tkp-p2",
+            "store": {
+              "name": "hp",
+              "location": "Houston"
+            },
+            "product": {
+              "imgUrl": "/product/product5.jpg",
+              "title": "Gaming Laptop 15T",
+              "color": "Green",
+              "discount": "25",
+              "price": "18990000"
+            }
+          },
+          "quantity": 1
+        }
+      ],
+      "totalDiscount": 4747500,
+      "totalPrice": 18990000,
+      "endTotal": 14242500
+    }
+  ]
+}
